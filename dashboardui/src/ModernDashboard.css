@@ -1,0 +1,296 @@
+/* ModernDashboard.css - Enhanced Animations & Spacing */
+
+:root {
+    --primary-color: #4a6cf7;
+    --secondary-color: #1e2a4a;
+    --success-color: #2ecc71;
+    --warning-color: #f39c12;
+    --danger-color: #e74c3c;
+    --light-bg: #f8f9fa;
+    --dark-bg: #2c3e50;
+    --text-color: #333;
+    --light-text: #f8f9fa;
+    --border-radius: 6px;
+    --box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f6f8fc;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+}
+
+.dashboard-container {
+    padding: 40px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    padding: 20px;
+    margin-bottom: 30px;
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+    .card:hover {
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--secondary-color);
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+/* Tabs styling */
+.tab-container {
+    display: flex;
+    border-bottom: 1px solid #e5e7eb;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 14px 24px;
+    margin-right: 8px;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: var(--transition);
+    font-weight: 500;
+    color: #64748b;
+}
+
+    .tab.active {
+        color: var(--primary-color);
+        border-bottom-color: var(--primary-color);
+    }
+
+    .tab:hover:not(.active) {
+        color: #334155;
+        border-bottom-color: #e5e7eb;
+    }
+
+/* Button styling with animations */
+.btn {
+    padding: 10px 16px;
+    border-radius: var(--border-radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    outline: none;
+}
+
+    .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+    .btn-primary:hover {
+        background-color: #3a5bd9;
+    }
+
+.btn-success {
+    background-color: var(--success-color);
+    color: white;
+}
+
+    .btn-success:hover {
+        background-color: #27ae60;
+    }
+
+.btn-secondary {
+    background-color: #e5e7eb;
+    color: #64748b;
+}
+
+    .btn-secondary:hover {
+        background-color: #d1d5db;
+    }
+
+/* Sliders */
+.slider-container {
+    margin: 30px 0;
+}
+
+.slider-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #64748b;
+}
+
+input[type="range"] {
+    width: 100%;
+    height: 6px;
+    appearance: none;
+    background: #e5e7eb;
+    border-radius: 3px;
+    outline: none;
+}
+
+    input[type="range"]::-webkit-slider-thumb {
+        appearance: none;
+        width: 18px;
+        height: 18px;
+        background: var(--primary-color);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: transform 0.2s;
+    }
+
+        input[type="range"]::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+        }
+
+/* Status indicators */
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+}
+
+    .status-badge.success {
+        background-color: rgba(46, 204, 113, 0.15);
+        color: var(--success-color);
+    }
+
+    .status-badge.warning {
+        background-color: rgba(243, 156, 18, 0.15);
+        color: var(--warning-color);
+    }
+
+    .status-badge.info {
+        background-color: rgba(74, 108, 247, 0.15);
+        color: var(--primary-color);
+    }
+
+/* Log viewer */
+.log-container {
+    background-color: #1a202c;
+    color: #e2e8f0;
+    border-radius: var(--border-radius);
+    font-family: 'Consolas', 'Monaco', monospace;
+    height: 400px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.log-entry {
+    padding: 6px 10px;
+    border-bottom: 1px solid #2d3748;
+    font-size: 0.875rem;
+}
+
+    .log-entry:last-child {
+        border-bottom: none;
+    }
+
+.log-level {
+    display: inline-block;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin-right: 8px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+    .log-level.info {
+        background-color: #3182ce;
+    }
+
+    .log-level.warning {
+        background-color: #dd6b20;
+    }
+
+    .log-level.error {
+        background-color: #e53e3e;
+    }
+
+/* Detection preview area */
+.preview-container {
+    position: relative;
+    border: 1px solid #e5e7eb;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.preview-toolbar {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 8px;
+}
+
+    .preview-toolbar button {
+        background-color: rgba(255, 255, 255, 0.8);
+        border: none;
+        border-radius: 4px;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: var(--transition);
+    }
+
+        .preview-toolbar button:hover {
+            background-color: white;
+        }
+
+/* Color targets */
+.color-target {
+    border: 1px solid #e5e7eb;
+    border-radius: var(--border-radius);
+    padding: 15px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.color-sample {
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .tab {
+        padding: 10px;
+        font-size: 0.875rem;
+    }
+
+    .btn {
+        padding: 8px 12px;
+        font-size: 0.875rem;
+    }
+}

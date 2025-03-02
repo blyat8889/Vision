@@ -1,0 +1,12 @@
+{
+    "active": false,
+    "smoothingFactor": 50,
+    "filterType": "adaptive",
+    "responseSpeed": 50,
+    "filteringStrength": 50,
+    "movementType": "hybrid",
+    "humanizeEnabled": true,
+    "humanizeFactor": 20,
+    "predictionEnabled": false,
+    "predictionFrames": 5
+}

@@ -1,0 +1,54 @@
+// HidFilterDriver.inf
+// INF file for driver installation
+
+[Version]
+Signature="$Windows NT$"
+Class=HIDClass
+ClassGuid={745a17a0-74d3-11d0-b6fe-00a0c90f57da}
+Provider=%ManufacturerName%
+CatalogFile=HidFilterDriver.cat
+DriverVer=01/01/2023,1.0.0.0
+PnpLockdown=1
+
+[Manufacturer]
+%ManufacturerName%=Standard,NT$ARCH$.10.0
+
+[Standard.NT$ARCH$.10.0]
+%DeviceName%=HidFilter_Install, HID\VID*PID*
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+HidFilterDriver.sys = 1,,
+
+[DestinationDirs]
+DefaultDestDir = 12
+HidFilter_CopyFiles = 12
+
+[HidFilter_Install]
+CopyFiles=HidFilter_CopyFiles
+AddReg=HidFilter_AddReg
+
+[HidFilter_CopyFiles]
+HidFilterDriver.sys
+
+[HidFilter_Install.Services]
+AddService = HidFilterDriver,,HidFilter_ServiceInstall
+
+[HidFilter_ServiceInstall]
+DisplayName    = %ServiceName%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\HidFilterDriver.sys
+LoadOrderGroup = Extended Base
+
+[HidFilter_AddReg]
+HKR,,"UpperFilters",0x00010000,"HidFilterDriver"
+
+[Strings]
+ManufacturerName="Research and Educational Purposes"
+DiskName = "HID Filter Driver Installation Disk"
+DeviceName="HID Input Filter Driver"
+ServiceName="HID Input Filter Service"

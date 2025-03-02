@@ -1,0 +1,43 @@
+{
+    "active": false,
+    "hsvLower": [
+        106,
+        173,
+        209
+    ],
+    "hsvUpper": [
+        122,
+        225,
+        255
+    ],
+    "noiseReduction": 5,
+    "adaptiveMode": false,
+    "roiEnabled": false,
+    "roi": {
+        "height": 600,
+        "width": 800,
+        "x": 0,
+        "y": 0
+    },
+    "minArea": 100,
+    "fps": 60,
+    "colorTargets": [
+        {
+            "id": "1",
+            "name": "Default Color",
+            "hexColor": "#00ff00",
+            "hsvLower": [
+                106,
+                173,
+                209
+            ],
+            "hsvUpper": [
+                122,
+                225,
+                255
+            ],
+            "tolerance": 25,
+            "active": true
+        }
+    ]
+}
